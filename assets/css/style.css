@@ -38,8 +38,10 @@ body {
 	background-size: cover;*/
 
 	/* font-family: "Conthrax"; */
-	font-family: "SauceCode Nerd Font";
 	color: var(--platinum);
+	font-family: "SauceCodePro Nerd Font";
+	text-rendering: optimizeLegibility;
+	font-variant-ligatures: normal;
 }
 
 #vanta {
@@ -110,7 +112,7 @@ div.me::after {
 }
 
 div.me:hover::after {
-	animation: show-uwu 5s forwards;
+	animation: show-uwu 3s forwards;
 }
 
 div.me:hover {
