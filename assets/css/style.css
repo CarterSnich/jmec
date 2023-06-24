@@ -84,6 +84,7 @@ div.me {
 	position: relative;
 	padding: 1rem;
 	filter: grayscale(100%);
+	transition: filter 0.3s ease-in-out;
 }
 
 div.me::before {
@@ -135,7 +136,6 @@ div.me > img {
 	width: calc(100% - 1rem);
 	margin: auto;
 	border-radius: 1rem;
-	transition: filter 0.3s ease-in-out;
 	box-shadow: 0px 0px 12px var(--platinum);
 }
 
