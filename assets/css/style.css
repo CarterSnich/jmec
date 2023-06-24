@@ -60,9 +60,10 @@ body {
 main {
 	isolation: isolate;
 	height: 100vh;
-	overflow: scroll;
 	scroll-snap-type: y mandatory;
 	box-shadow: inset 0px 0px 100px rgba(222, 222, 222, 0.4);
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
 main > section {
