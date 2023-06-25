@@ -2,28 +2,35 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Joe Mar Closa</title>
 
-    <link rel="stylesheet" href="assets/css/font.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/font.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
 </head>
 
 <body>
     <div id="vanta"></div>
     <div id="blur"></div>
 
+    <div id="scroll-spy">
+        <ul>
+            <li><a href="#home" data-target-id="home">home</a></li>
+            <li><a href="#skills" data-target-id="skills">skills</a></li>
+            <li><a href="#about" data-target-id="about">about</a></li>
+            <li><a href="#contact" data-target-id="contact">contact</a></li>
+        </ul>
+    </div>
     <main>
-
         <!-- HOME -->
         <section id="home">
             <div class="me">
-                <img src="assets/img/me.jpg" alt="">
+                <img src="assets/img/me.jpg" alt="me" />
             </div>
             <div class="intro">
                 <div>
@@ -38,11 +45,8 @@
                             <li><a href="#contact">contact</a></li>
                         </ul>
                     </div>
-
                 </div>
-
             </div>
-
         </section>
 
         <!-- SKILLS -->
@@ -117,7 +121,7 @@
             <div class="skill-card">
                 <div>
                     <i>󰓷</i>
-                    <span>mobile <br>development</span>
+                    <span>mobile <br />development</span>
                 </div>
                 <ul>
                     <li>
@@ -157,7 +161,7 @@
         <!-- ABOUT -->
         <section id="about">
             <p>hello there!</p>
-            <p>i'm joe mar closa, a skilled software developer specializing in web development. my expertise includes html/css, javascript frameworks, php, and python. i also have experience in mobile app development. with proficiency in python and shell scripting, i leverage my linux expertise to create and manage servers for web servicing.</p>
+            <p>i'm joe mar closa, a skilled software developer specializing in web development. my expertise includes html/css, javascript frameworks, php, and python. i also have experience in mobile app development. proficiency in writing automations with python and shell scripts. i leverage my linux expertise to create and manage servers for web servicing.</p>
             <p>i'm passionate about building innovative solutions that push boundaries and deliver exceptional user experiences. let's collaborate and create remarkable software together!</p>
             <div>
                 <a href="assets/resume.pdf" download> resume</a>
@@ -183,7 +187,6 @@
                 </li>
             </ul>
         </section>
-
     </main>
 
     <script src="assets/js/script.js" defer></script>
@@ -195,13 +198,13 @@
             mouseControls: false,
             touchControls: false,
             gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
+            minHeight: 200.0,
+            minWidth: 200.0,
+            scale: 1.0,
+            scaleMobile: 1.0,
             color: 0xffffff,
-            backgroundColor: 0x222222
-        })
+            backgroundColor: 0x222222,
+        });
     </script>
 </body>
 

@@ -9,6 +9,10 @@
 
 /* Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {
+	div#scroll-spy {
+		display: none;
+	}
+
 	main > section {
 		padding: 1.25rem;
 	}
