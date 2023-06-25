@@ -42,6 +42,9 @@ body {
 	font-family: "SauceCodePro Nerd Font";
 	text-rendering: optimizeLegibility;
 	font-variant-ligatures: normal;
+
+	display: flex;
+	flex-direction: row-reverse;
 }
 
 #vanta {
@@ -57,6 +60,77 @@ body {
 	backdrop-filter: brightness(40%) blur(8px);
 }
 
+div#scroll-spy {
+	display: grid;
+	place-content: center;
+	width: 3.25rem;
+}
+
+div#scroll-spy > ul {
+	rotate: 90deg;
+
+	display: flex;
+	flex-direction: row;
+	width: 100vh;
+
+	list-style-type: none;
+}
+
+div#scroll-spy > ul * {
+	transition: all 0.3s ease-in-out;
+}
+
+div#scroll-spy > ul > li {
+	flex-grow: 1;
+	height: 2.25rem;
+
+	display: grid;
+	place-content: center;
+	justify-content: stretch;
+
+	position: relative;
+}
+
+div#scroll-spy > ul > li.active::after {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+
+	content: "";
+	width: 0%;
+	height: 2px;
+	box-shadow: 0px 0px 12px rgba(222, 222, 222, 1);
+	background-color: rgba(222, 222, 222, 0.8);
+	animation: scroll-spy-link-active-indicator 0.3s ease-in-out forwards;
+}
+
+@keyframes scroll-spy-link-active-indicator {
+	100% {
+		width: calc(100% - 1rem);
+	}
+}
+
+div#scroll-spy > ul > li > a {
+	display: block;
+	width: 100%;
+	color: inherit;
+	text-align: center;
+	text-decoration: none;
+}
+
+div#scroll-spy > ul > li > a {
+	background-image: linear-gradient(90deg, #dedede00, #dededeff, #dedede00);
+	background-size: 0%;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+div#scroll-spy > ul > li > a:hover {
+	background-size: 100%;
+	color: var(--onyx);
+}
+
 main {
 	isolation: isolate;
 	height: 100vh;
@@ -64,6 +138,15 @@ main {
 	box-shadow: inset 0px 0px 100px rgba(222, 222, 222, 0.4);
 	overflow-x: hidden;
 	overflow-y: auto;
+
+	/* hide scrollbar */
+	scrollbar-width: none; /* For Firefox */
+	-ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+/* hide scrollbar */
+main::-webkit-scrollbar {
+	display: none; /* For Chrome, Safari, and Opera */
 }
 
 main > section {
