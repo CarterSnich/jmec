@@ -17,6 +17,7 @@
 	--gradient-top-left: linear-gradient(225deg, #0d0d0dff, #424242ff, #5c5c5cff, #8e8e8eff, #9d9d9dff, #dededeff);
 	--gradient-bottom-left: linear-gradient(315deg, #0d0d0dff, #424242ff, #5c5c5cff, #8e8e8eff, #9d9d9dff, #dededeff);
 	--gradient-radial: radial-gradient(#0d0d0dff, #424242ff, #5c5c5cff, #8e8e8eff, #9d9d9dff, #dededeff);
+	--gradient-middle: linear-gradient(90deg, #00000000 0%, #dededeff 33%, #dededeff 66%, #00000000 100%);
 
 	--shadow: 0px 0px 24px rgba(222, 222, 222, 0.8);
 }
@@ -29,28 +30,16 @@
 }
 
 body {
-	height: 100vh;
-	/* background-color: var(--night);
-	background-image: url(../img/monochrome-city.jpg);
-	backdrop-filter: brightness(40%) blur(8px); 
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;*/
-
-	/* font-family: "Conthrax"; */
-	color: var(--platinum);
-	font-family: "SauceCodePro Nerd Font";
-	text-rendering: optimizeLegibility;
-	font-variant-ligatures: normal;
-
 	display: flex;
 	flex-direction: row-reverse;
-}
-
-#vanta {
-	position: fixed;
 	height: 100vh;
-	width: 100vw;
+
+	color: var(--platinum);
+	font-family: "SauceCodePro Nerd Font";
+	font-variant-ligatures: normal;
+	text-rendering: optimizeLegibility;
+
+	background-image: url(../img/bg.jpg);
 }
 
 #blur {
@@ -105,12 +94,6 @@ div#scroll-spy > ul > li.active::after {
 	animation: scroll-spy-link-active-indicator 0.3s ease-in-out forwards;
 }
 
-@keyframes scroll-spy-link-active-indicator {
-	100% {
-		width: calc(100% - 1rem);
-	}
-}
-
 div#scroll-spy > ul > li > a {
 	display: block;
 	width: 100%;
@@ -120,15 +103,15 @@ div#scroll-spy > ul > li > a {
 }
 
 div#scroll-spy > ul > li > a {
-	background-image: linear-gradient(90deg, #dedede00, #dededeff, #dedede00);
+	background-image: var(--gradient-middle);
 	background-size: 0%;
 	background-position: center center;
 	background-repeat: no-repeat;
 }
 
 div#scroll-spy > ul > li > a:hover {
-	background-size: 100%;
 	color: var(--onyx);
+	background-size: 100%;
 }
 
 main {
@@ -173,48 +156,8 @@ div.me {
 	transition: filter 0.3s ease-in-out;
 }
 
-div.me::before {
-	content: "btw, i use arch";
-	position: absolute;
-	bottom: -1rem;
-	right: 1.25rem;
-	rotate: 180deg;
-}
-
-div.me::after {
-	opacity: 0;
-	content: "stop staring, uwu";
-
-	position: absolute;
-	inset: 0;
-
-	font-size: xx-large;
-	backdrop-filter: blur(8px) brightness(40%);
-
-	display: grid;
-	place-content: center;
-}
-
-div.me:hover::after {
-	animation: show-uwu 3s forwards;
-}
-
 div.me:hover {
 	filter: grayscale(0%);
-}
-
-@keyframes show-uwu {
-	0% {
-		opacity: 0;
-	}
-
-	99% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 1;
-	}
 }
 
 div.me > img {
@@ -229,15 +172,16 @@ div.intro {
 	align-self: stretch;
 	display: grid;
 	place-content: center;
+
+	font-size: calc(12px + 1rem) !important;
 }
 
 div.intro > div {
 	position: relative;
-	font-size: xx-large;
 	text-shadow: var(--shadow);
 }
 
-.bar {
+div.intro > div > div.bar {
 	position: absolute;
 	border-radius: 1rem;
 	background-color: var(--platinum);
@@ -262,7 +206,7 @@ div.intro > div {
 
 #links > ul > li {
 	color: var(--platinum);
-	background-image: linear-gradient(270deg, #dedede00, #dededeff);
+	background-image: linear-gradient(90deg, #dededeff 66%, #dedede00 100%);
 	background-size: 0%;
 	background-repeat: no-repeat;
 	transition: all 0.3s ease-in-out;
@@ -400,17 +344,18 @@ section#about > div > a {
 
 	color: inherit;
 	text-decoration: none;
-	background-image: linear-gradient(90deg, #dedede00, #dededeff, #dedede00);
+
+	background-image: var(--gradient-middle);
 	background-size: 0%;
 	background-position: center center;
 	background-repeat: no-repeat;
+
 	transition: all 0.3s ease-in-out;
 }
 
 section#about > div > a:hover {
-	background-size: 100%;
 	color: var(--onyx);
-	mix-blend-mode: difference;
+	background-size: 100%;
 }
 
 /*  ====================
@@ -419,6 +364,7 @@ section#about > div > a:hover {
 section#contact {
 	display: grid;
 	place-content: center;
+	justify-content: stretch;
 	text-align: center;
 	font-size: xx-large;
 }
@@ -430,23 +376,23 @@ ul#contact-links {
 	list-style-type: none;
 }
 
-ul#contact-links > li {
-	background-image: linear-gradient(90deg, #dedede00, #dededeff, #dedede00);
+ul#contact-links > li > a {
+	display: block;
+
+	color: var(--platinum);
+	text-decoration: none;
+	outline: none;
+	padding-inline: 1.25rem;
+
+	background-image: var(--gradient-middle);
 	background-size: 0%;
 	background-position: center center;
 	background-repeat: no-repeat;
+
 	transition: all 0.3s ease-in-out;
-	padding-inline: 12rem;
 }
 
-ul#contact-links > li:hover {
+ul#contact-links > li > a:hover {
 	color: var(--onyx);
-	mix-blend-mode: difference;
 	background-size: 100%;
-}
-
-ul#contact-links > li > a {
-	color: inherit;
-	text-decoration: none;
-	mix-blend-mode: darken;
 }

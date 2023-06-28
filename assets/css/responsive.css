@@ -9,8 +9,24 @@
 
 /* Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {
+	body {
+		flex-direction: column-reverse;
+	}
+
+	main > section {
+		height: calc(100vh - 3.25rem);
+	}
+
 	div#scroll-spy {
-		display: none;
+		width: 100%;
+	}
+
+	div#scroll-spy > ul {
+		align-items: center;
+
+		rotate: unset;
+		width: 100vw;
+		height: 3.25rem;
 	}
 
 	main > section {
@@ -75,8 +91,7 @@
 		mix-blend-mode: difference;
 	}
 
-	section#about,
-	section#contact {
+	section#about {
 		font-size: 1.25rem;
 	}
 
@@ -99,3 +114,29 @@
 
 /* XX-Large devices (larger desktops) */
 /* No media query since the xxl breakpoint has no upper bound on its width */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	ul#contact-links > li > a:hover {
+		background-size: calc(800px + 5rem);
+	}
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	ul#contact-links > li > a:hover {
+		background-size: 800px;
+	}
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+}

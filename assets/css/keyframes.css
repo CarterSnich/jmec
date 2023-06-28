@@ -1,0 +1,34 @@
+@keyframes scroll-spy-link-active-indicator {
+	100% {
+		width: calc(100% - 1rem);
+	}
+}
+
+@keyframes blink {
+	0% {
+		background-color: transparent;
+	}
+
+	20% {
+		color: var(--onyx);
+		background-color: var(--platinum);
+	}
+
+	40% {
+		background-color: transparent;
+	}
+
+	60% {
+		color: var(--onyx);
+		background-color: var(--platinum);
+	}
+
+	80% {
+		background-color: transparent;
+	}
+
+	100% {
+		color: var(--onyx);
+		background-color: var(--platinum);
+	}
+}
