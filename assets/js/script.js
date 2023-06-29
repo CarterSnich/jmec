@@ -5,16 +5,10 @@ const scrollSpyLinks = document.querySelectorAll("div#scroll-spy a");
 // Create an Intersection Observer
 const observer = new IntersectionObserver(
 	(entries) => {
-		entries.forEach((entry) => {
-			if (entry.isIntersecting) {
-				scrollSpyLinks.forEach((el) => {
-					console.log(el.dataset.targetId);
-					if (el.dataset.targetId == entry.target.id) {
-						el.parentElement.classList.add("active");
-					} else {
-						el.parentElement.classList.remove("active");
-					}
-				});
+		entries.forEach((section) => {
+			if (section.isIntersecting) {
+				document.querySelector("div#scroll-spy li.active")?.classList.remove("active");
+				document.querySelector(`div#scroll-spy li:has(a[data-target-id=${section.target.id}])`)?.classList.add("active");
 			}
 		});
 	},
