@@ -2,10 +2,6 @@ body.light {
 	backdrop-filter: invert(1) brightness(40%) blur(8px);
 }
 
-.light div#scroll-spy {
-	--asd: linear-gradient(90deg, #00000000 0%, var(--platinum) 100%);
-}
-
 .light div.intro {
 	text-shadow: var(--shadow-light);
 }
