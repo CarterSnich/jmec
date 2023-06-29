@@ -1,3 +1,5 @@
+console.log(`LIGHTMODE: ${localStorage.getItem("LIGHTMODE")}`);
+
 const sections = document.querySelectorAll("main > section");
 const scrollSpyLinks = document.querySelectorAll("div#scroll-spy a");
 const themeSwitcher = document.querySelector("#theme-switcher input");
@@ -24,9 +26,11 @@ sections.forEach((section) => {
 
 themeSwitcher.addEventListener("change", function () {
 	document.body.classList.toggle("light", this.checked);
-	localStorage.setItem("LIGHTMODE", this.checked);
+	localStorage.setItem("LIGHTMODE", this.checked ? 1 : 0);
 });
 
 (function () {
-	if (localStorage.getItem("LIGHTMODE")) themeSwitcher.click();
+	if (localStorage.getItem("LIGHTMODE") != null && localStorage.getItem("LIGHTMODE") == 1) {
+		themeSwitcher.click();
+	}
 })();

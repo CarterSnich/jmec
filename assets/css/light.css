@@ -22,15 +22,16 @@ body.light {
 	background-color: var(--night-40);
 }
 
-.light ul#contact-links > li > a {
+.light section#about {
+	text-shadow: var(--shadow-light);
+}
+
+.light section#contact {
 	text-shadow: var(--shadow-light);
 }
 
 .light #theme-switcher > label {
 	background-position: right;
-}
-
-.light #theme-switcher span {
 }
 
 .light #theme-switcher span:before {

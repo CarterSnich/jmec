@@ -194,6 +194,13 @@ div.intro {
 div.intro > div {
 	position: relative;
 }
+div.intro > div > h1 {
+	overflow: hidden;
+	text-shadow: none;
+	white-space: nowrap;
+	border-right: 1.25rem solid var(--platinum); /* The typwriter cursor */
+	animation: typing 1s steps(13, end), blink-caret 0.75s step-end infinite;
+}
 
 div.intro > div > div.bar {
 	position: absolute;
@@ -387,6 +394,7 @@ section#contact {
 	justify-content: stretch;
 
 	text-align: center;
+	text-shadow: var(--shadow);
 }
 
 ul#contact-links {
@@ -407,8 +415,6 @@ ul#contact-links > li > a {
 	background-size: 0%;
 	background-position: center center;
 	background-repeat: no-repeat;
-
-	text-shadow: var(--shadow);
 
 	transition: all 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
 }
