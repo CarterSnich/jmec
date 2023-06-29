@@ -1,0 +1,40 @@
+body.light {
+	backdrop-filter: invert(1) brightness(40%) blur(8px);
+}
+
+.light div#scroll-spy {
+	--asd: linear-gradient(90deg, #00000000 0%, var(--platinum) 100%);
+}
+
+.light div.intro {
+	text-shadow: var(--shadow-light);
+}
+
+.light div.me > img {
+	height: calc(100% - 1rem);
+	width: calc(100% - 1rem);
+	margin: auto;
+	border-radius: 1rem;
+	box-shadow: var(--shadow-light);
+}
+
+.light .skill-card {
+	text-shadow: var(--shadow-light);
+}
+
+.light .skill-card:hover {
+	background-color: var(--night-40);
+}
+
+.light ul#contact-links > li > a {
+	text-shadow: var(--shadow-light);
+}
+
+.light #theme-switcher > label {
+	background-position: right;
+}
+
+.light #theme-switcher span:before {
+	content: "";
+	color: var(--night);
+}

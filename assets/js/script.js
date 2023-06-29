@@ -23,3 +23,7 @@ const observer = new IntersectionObserver(
 sections.forEach((section) => {
 	observer.observe(section);
 });
+
+document.querySelector("#theme-switcher input").addEventListener("change", function () {
+	document.body.classList.toggle("light", this.checked);
+});

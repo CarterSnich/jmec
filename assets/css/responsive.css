@@ -109,6 +109,13 @@
 		font-size: 4vw;
 		white-space: nowrap;
 	}
+
+	#theme-switcher {
+		top: 0.75rem;
+		right: 0.75rem;
+		bottom: unset;
+		left: unset;
+	}
 }
 
 /* Medium devices (tablets, less than 992px) */
