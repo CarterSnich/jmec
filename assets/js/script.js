@@ -1,8 +1,7 @@
-// Get all the section elements
 const sections = document.querySelectorAll("main > section");
 const scrollSpyLinks = document.querySelectorAll("div#scroll-spy a");
+const themeSwitcher = document.querySelector("#theme-switcher input");
 
-// Create an Intersection Observer
 const observer = new IntersectionObserver(
 	(entries) => {
 		entries.forEach((section) => {
@@ -19,11 +18,15 @@ const observer = new IntersectionObserver(
 	}
 );
 
-// Observe each section
 sections.forEach((section) => {
 	observer.observe(section);
 });
 
-document.querySelector("#theme-switcher input").addEventListener("change", function () {
+themeSwitcher.addEventListener("change", function () {
 	document.body.classList.toggle("light", this.checked);
+	localStorage.setItem("LIGHTMODE", this.checked);
 });
+
+(function () {
+	if (localStorage.getItem("LIGHTMODE")) themeSwitcher.click();
+})();

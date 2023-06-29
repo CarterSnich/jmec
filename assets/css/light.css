@@ -30,7 +30,9 @@ body.light {
 	background-position: right;
 }
 
+.light #theme-switcher span {
+}
+
 .light #theme-switcher span:before {
 	content: "";
-	color: var(--night);
 }
