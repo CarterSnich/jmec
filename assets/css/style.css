@@ -100,8 +100,10 @@ div#scroll-spy > ul > li.active::after {
 	content: "";
 	width: 0%;
 	height: 2px;
-	box-shadow: 0px 0px 12px var(--platinum);
+
 	background-color: var(--platinum-80);
+	box-shadow: 0px 0px 12px var(--platinum);
+
 	animation: scroll-spy-link-active-indicator 0.3s ease-in-out forwards;
 }
 
@@ -194,12 +196,31 @@ div.intro {
 div.intro > div {
 	position: relative;
 }
-div.intro > div > h1 {
-	overflow: hidden;
-	text-shadow: none;
+
+div.intro > div > div.my-name {
+	position: relative;
+}
+
+div.intro > div > div.my-name > h1:first-child {
+	color: transparent !important;
+	text-shadow: inherit;
 	white-space: nowrap;
-	border-right: 1.25rem solid var(--platinum); /* The typwriter cursor */
-	animation: typing 1s steps(13, end), blink-caret 0.75s step-end infinite;
+}
+
+div.intro > div > div.my-name > h1:nth-child(2) {
+	box-sizing: content-box;
+	overflow: hidden;
+	white-space: nowrap;
+	position: absolute;
+	text-shadow: none;
+	width: 0%;
+	top: 0;
+	left: 0;
+	border-right: 1.25rem solid var(--platinum);
+}
+
+div.intro > div > div.my-name.animate > h1:nth-child(2) {
+	animation: typing 1s steps(13, end) forwards, blink-caret 1s step-end infinite;
 }
 
 div.intro > div > div.bar {
@@ -261,6 +282,26 @@ section#skills {
 	column-gap: 1.25rem;
 }
 
+section#skills.animate .skill-card {
+	animation: appear-from-left 1s ease-in-out forwards;
+}
+
+section#skills.animate .skill-card:nth-child(2) {
+	animation-delay: 100ms;
+}
+
+section#skills.animate .skill-card:nth-child(3) {
+	animation-delay: 200ms;
+}
+
+section#skills.animate .skill-card:nth-child(4) {
+	animation-delay: 300ms;
+}
+
+section#skills.animate .skill-card:nth-child(5) {
+	animation-delay: 400ms;
+}
+
 .skill-card {
 	position: relative;
 
@@ -279,6 +320,9 @@ section#skills {
 	text-align: center;
 	white-space: nowrap;
 	text-shadow: var(--shadow);
+
+	filter: blur(8px);
+	transform: translateX(-50%);
 
 	transition: text-shadow 0.3s ease-in-out;
 }
@@ -358,6 +402,28 @@ section#about {
 
 section#about > * {
 	padding: 1.25rem;
+}
+
+section#about > div.about-me {
+	position: relative;
+}
+
+section#about > div.about-me > pre {
+	white-space: break-spaces;
+	line-height: 1.75rem;
+}
+
+section#about > div.about-me > pre:first-child {
+	color: transparent;
+}
+
+section#about > div.about-me > pre:nth-child(2) {
+	position: absolute;
+}
+
+section#about > div.about-me > pre:nth-child(2) > span {
+	border-right: 0.75rem solid var(--platinum); /* The typwriter cursor */
+	animation: typing 1s steps(13, end), blink-caret 1s step-end infinite;
 }
 
 section#about > div {

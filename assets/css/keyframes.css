@@ -45,9 +45,21 @@
 @keyframes blink-caret {
 	from,
 	to {
-		border-color: transparent;
+		border-color: var(--platinum);
 	}
 	50% {
-		border-color: var(--platinum);
+		border-color: transparent;
+	}
+}
+
+@keyframes appear-from-left {
+	from {
+		filter: blur(8px);
+		transform: translateX(-50%);
+	}
+
+	to {
+		filter: blur(0px);
+		transform: translateX(0%);
 	}
 }

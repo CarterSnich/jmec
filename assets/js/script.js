@@ -10,13 +10,38 @@ const observer = new IntersectionObserver(
 			if (section.isIntersecting) {
 				document.querySelector("div#scroll-spy li.active")?.classList.remove("active");
 				document.querySelector(`div#scroll-spy li:has(a[data-target-id=${section.target.id}])`)?.classList.add("active");
+
+				switch (section.target.id) {
+					case "home":
+						document.querySelector("div.my-name").classList.add("animate");
+						break;
+
+					case "skills":
+						document.querySelector("section#skills").classList.add("animate");
+						break;
+
+					case "about":
+						const aboutMeHidden = document.querySelector("div.about-me > pre:first-child");
+						const aboutMeVisible = document.querySelector("div.about-me > pre:nth-child(2)");
+
+						if (!aboutMeVisible.innerText) {
+							let i = 0;
+							let interval = setInterval(() => {
+								aboutMeVisible.innerText += aboutMeHidden.innerText[i];
+								aboutMeVisible.innerHTML += "<span></span>";
+								if (i >= aboutMeHidden.innerText.length - 1) clearInterval(interval);
+								++i;
+							}, aboutMeHidden.innerText.length * 0.05);
+						}
+						break;
+				}
 			}
 		});
 	},
 	{
-		root: null, // Use the viewport as the root
+		root: null,
 		rootMargin: "0px",
-		threshold: 0.8, // Adjust this value based on your needs
+		threshold: 0.8,
 	}
 );
 
